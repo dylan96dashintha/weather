@@ -1,0 +1,9 @@
+services:
+  ## google APIS base url
+  - name: googleMapBaseUrl
+    url: https://addressvalidation.googleapis.com
+    timeout: HIGH
+
+  - name: geoJsonAPI
+    url: https://maps.googleapis.com
+    timeout: HIGH

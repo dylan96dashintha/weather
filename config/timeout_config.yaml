@@ -1,0 +1,23 @@
+
+#remote call timeout for medium timeouts
+remote_call_timeout: 2000
+#dial timeout
+dial_timeout: 1000
+#keep alive timeout
+keep_alive_timeout: 1000
+
+##configurations for low/less timeouts
+#remote call timeout for low
+remote_call_timeout_low: 1000
+#dial timeout for low
+dial_timeout_low: 1000
+#keep alive timeout
+keep_alive_timeout_low: 1000
+
+##configurations for high/longer timeouts
+#remote call timeout for high
+remote_call_timeout_high: 60000
+#dial timeout for high
+dial_timeout_high: 10000
+#keep alive timeout
+keep_alive_timeout_high: 10000

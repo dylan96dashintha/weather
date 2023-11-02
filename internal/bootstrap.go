@@ -4,13 +4,14 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"github.com/weather/internal/config"
 	"github.com/weather/internal/service"
 )
 
-func InitWeatherForecast(ctx context.Context) {
+func InitWeatherForecast(ctx context.Context, conf *config.Config) {
 
 	city := readCityName()
-	weatherServiceObj := service.GetWeatherServiceObject()
+	weatherServiceObj := service.GetWeatherServiceObject(conf)
 	weatherServiceObj.GetWeatherReport(ctx, city)
 
 }
@@ -24,7 +25,7 @@ func readCityName() (city string) {
 		if err != nil {
 			panic(err.Error())
 		}
-		fmt.Printf("weather forecast for the city %s", city)
+		fmt.Printf("weather forecast for the city %s \n", city)
 	} else {
 		panic(fmt.Sprintf("cannot find the city name"))
 	}
