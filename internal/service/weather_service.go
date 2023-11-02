@@ -48,5 +48,13 @@ func (w weather) GetWeatherReport(ctx context.Context, city string) (err error) 
 		return errors.New(fmt.Sprintf("City name validation failed, check spelling next time"))
 	}
 
+	// get weather report related to the coordinates
+	weatherReport, err := w.weatherReportUseCase.GetWeatherReport(ctx, response)
+	if err != nil {
+		return err
+	}
+
+	w.weatherReportUseCase.PrintFormattedReport(ctx, weatherReport)
+
 	return nil
 }

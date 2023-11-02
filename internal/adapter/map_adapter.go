@@ -33,7 +33,7 @@ func newMapAdapterObj(conf *config.Config) MapAdapter {
 	return mapAdapterObject
 }
 
-func GetWeatherServiceObject(conf *config.Config) MapAdapter {
+func GetMapAdapterObject(conf *config.Config) MapAdapter {
 	mapAdapterOnce.Do(func() {
 		mapAdapterObj = newMapAdapterObj(conf)
 	})

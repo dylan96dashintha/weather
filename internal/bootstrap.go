@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/weather/internal/config"
 	"github.com/weather/internal/service"
+	"log"
 )
 
 func InitWeatherForecast(ctx context.Context, conf *config.Config) {
@@ -23,11 +24,11 @@ func readCityName() (city string) {
 		city = nonFlagArgs[0]
 		err := stringValidator(city)
 		if err != nil {
-			panic(err.Error())
+			log.Fatal(err.Error())
 		}
 		fmt.Printf("weather forecast for the city %s \n", city)
 	} else {
-		panic(fmt.Sprintf("cannot find the city name"))
+		log.Fatal(fmt.Sprintf("cannot find the city name"))
 	}
 
 	return city

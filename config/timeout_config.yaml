@@ -16,8 +16,8 @@ keep_alive_timeout_low: 1000
 
 ##configurations for high/longer timeouts
 #remote call timeout for high
-remote_call_timeout_high: 60000
+remote_call_timeout_high: 600000
 #dial timeout for high
-dial_timeout_high: 10000
+dial_timeout_high: 100000
 #keep alive timeout
-keep_alive_timeout_high: 10000
+keep_alive_timeout_high: 100000
