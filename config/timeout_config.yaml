@@ -16,13 +16,13 @@ keep_alive_timeout_low: 1000
 
 ##configurations for high/longer timeouts
 #remote call timeout for high
-remote_call_timeout_high: 600000
+remote_call_timeout_high: 10000
 #dial timeout for high
-dial_timeout_high: 100000
+dial_timeout_high: 10000
 #keep alive timeout
-keep_alive_timeout_high: 100000
+keep_alive_timeout_high: 10000
 
 
-cron_job_time_interval: "*/1 * * * *"
+cron_job_time_interval: "*/15 * * * *"
 
-update_interval: 1 min
+update_interval: 15 min

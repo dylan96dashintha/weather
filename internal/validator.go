@@ -9,7 +9,7 @@ import (
 func stringValidator(stringName string) (err error) {
 
 	// Method 1: Using regular expression
-	match, _ := regexp.MatchString("^[a-zA-Z]+$", stringName)
+	match, _ := regexp.MatchString("^[a-zA-Z ]+$", stringName)
 	if match {
 		return nil
 	}
