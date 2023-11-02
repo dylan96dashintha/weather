@@ -4,6 +4,6 @@ services:
     url: https://addressvalidation.googleapis.com
     timeout: HIGH
 
-  - name: geoJsonBaseUel
+  - name: geoJsonBaseUrl
     url: https://api.met.no/weatherapi/locationforecast
     timeout: HIGH

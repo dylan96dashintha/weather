@@ -19,7 +19,7 @@ var (
 )
 
 const (
-	geoJsonBaseUrl = "geoJsonBaseUel"
+	geoJsonBaseUrl = "geoJsonBaseUrl"
 )
 
 type geoJsonAdapter struct {
