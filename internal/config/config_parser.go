@@ -78,6 +78,7 @@ func ConfigurationParser() (conf *Config) {
 		ServiceConfig: ServiceConf,
 		MapConfig:     MapConf,
 		AppConfig:     appConf,
+		TimeOutConfig: TimeoutConf,
 	}
 }
 

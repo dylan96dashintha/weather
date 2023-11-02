@@ -21,3 +21,8 @@ remote_call_timeout_high: 600000
 dial_timeout_high: 100000
 #keep alive timeout
 keep_alive_timeout_high: 100000
+
+
+cron_job_time_interval: "*/1 * * * *"
+
+update_interval: 1 min

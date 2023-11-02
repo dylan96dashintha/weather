@@ -18,10 +18,12 @@ var (
 type weatherReport struct {
 	mapAdapter     adapter.MapAdapter
 	geoJsonAdapter adapter.GeoJsonAdapter
+	conf           *config.Config
 }
 
 func newWeatherReportObj(conf *config.Config) WeatherReport {
 	weatherReportObject := new(weatherReport)
+	weatherReportObject.conf = conf
 	weatherReportObject.mapAdapter = adapter.GetMapAdapterObject(conf)
 	weatherReportObject.geoJsonAdapter = adapter.GetGeoJsonAdapterObject(conf)
 	return weatherReportObject
@@ -77,7 +79,7 @@ func (w weatherReport) PrintFormattedReport(ctx context.Context, reportData doma
 
 	unitMap := getUnitRelatedToTheWeatherReport(ctx, reportData)
 	currentTime := time.Now().UTC()
-	fmt.Println(fmt.Sprintf("current time is, %v", currentTime))
+	fmt.Println(fmt.Sprintf("current time is, %v\n", currentTime))
 	currentTimeYear, currentTimeMonth, currentTimeDay := currentTime.Date()
 	currentTimeHour := currentTime.Hour()
 
@@ -96,6 +98,7 @@ func (w weatherReport) PrintFormattedReport(ctx context.Context, reportData doma
 				instantData.WindFromDirection, unitMap[domain.WindDirection]))
 			fmt.Println(fmt.Sprintf("precipitation amount in next 1 hour : %v %s",
 				timeSeriesData.Data.Next1Hours.Details.PrecipitationAmount, unitMap[domain.Precipitation]))
+			fmt.Println(fmt.Sprintf("Next weather update will be in %s\n", w.conf.TimeOutConfig.UpdateInterval))
 		}
 	}
 }

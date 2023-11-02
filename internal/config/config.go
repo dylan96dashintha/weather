@@ -20,6 +20,7 @@ type Config struct {
 	ServiceConfig OutBoundServiceConfig
 	MapConfig     MapConfig
 	AppConfig     AppConfig
+	TimeOutConfig TimeoutConfig
 }
 
 type TimeoutConfig struct {
@@ -34,6 +35,9 @@ type TimeoutConfig struct {
 	RemoteCallHigh int64 `yaml:"remote_call_timeout_high"`
 	DialHigh       int64 `yaml:"dial_timeout_high"`
 	KeepAliveHigh  int64 `yaml:"keep_alive_timeout_high"`
+
+	CronJobTimeInterval string `yaml:"cron_job_time_interval"`
+	UpdateInterval      string `yaml:"update_interval"`
 }
 
 type AppConfig struct {
