@@ -96,6 +96,8 @@ func (w weatherReport) PrintFormattedReport(ctx context.Context, reportData doma
 				instantData.WindSpeed, unitMap[domain.WindSpeed]))
 			fmt.Println(fmt.Sprintf("wind from direction in this hour : %v %s",
 				instantData.WindFromDirection, unitMap[domain.WindDirection]))
+			fmt.Println(fmt.Sprintf("relative humidity in this hour : %v %s",
+				instantData.RelativeHumidity, unitMap[domain.RelativeHumidity]))
 			fmt.Println(fmt.Sprintf("precipitation amount in next 1 hour : %v %s",
 				timeSeriesData.Data.Next1Hours.Details.PrecipitationAmount, unitMap[domain.Precipitation]))
 			fmt.Println(fmt.Sprintf("Next weather update will be in %s\n", w.conf.TimeOutConfig.UpdateInterval))
@@ -112,6 +114,6 @@ func getUnitRelatedToTheWeatherReport(ctx context.Context,
 	unitMap[domain.WindSpeed] = unitData.WindSpeed
 	unitMap[domain.WindDirection] = unitData.WindFromDirection
 	unitMap[domain.Precipitation] = unitData.PrecipitationAmount
-
+	unitMap[domain.RelativeHumidity] = unitData.RelativeHumidity
 	return unitMap
 }

@@ -47,7 +47,7 @@ func (g geoJsonAdapter) GetWeatherForecast(ctx context.Context,
 	)
 
 	baseUrl, timeOutPriority := GetServiceDetailsByName(geoJsonBaseUrl, g.conf)
-	weatherForecastUrl := baseUrl + "/2.0/compact?lat=" + fmt.Sprintf("%f", lat) + "&lon=" + fmt.Sprintf("%f", lon)
+	weatherForecastUrl := baseUrl + "/2.0/complete?lat=" + fmt.Sprintf("%f", lat) + "&lon=" + fmt.Sprintf("%f", lon)
 
 	httpClient := getHttpClient(timeOutPriority, g.conf)
 
